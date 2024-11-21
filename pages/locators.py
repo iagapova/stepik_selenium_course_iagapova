@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+# locators.py - тут мы храним локаторы, в виде констант. Локаторы каждой отдельной страницы завёрнуты в класс, чтобы было удобно импортировать
+
 
 class MainPageLocators():
     # LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")

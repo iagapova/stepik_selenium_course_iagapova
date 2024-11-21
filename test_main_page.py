@@ -4,6 +4,13 @@ from .pages.login_page import LoginPage
 from selenium.webdriver.common.by import By
 from .pages.main_page import MainPage
 
+# выполняем сами тесты
+# Здесь мы будем создавать функции, которым:
+# 1. выдаём нужный для проверки линк
+# 2. создаем объект page класса MainPage
+# 3. следом говорим "page, откройся", но методом из base_page.py(класс BasePage)
+# 4. добавляем проверки, которые создавали методами в main_page.py
+
 
 def test_guest_can_go_to_login_page(browser):
     link = "https://selenium1py.pythonanywhere.com/"
