@@ -1,5 +1,7 @@
 from .base_page import BasePage
 from .locators import MainPageLocators
+from .login_page import LoginPage
+
 from selenium.webdriver.common.by import By
 
 
@@ -8,6 +10,8 @@ class MainPage(BasePage):
         # символ * указывает на то, что мы передали именно пару, и этот кортеж нужно распаковать
         login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
         login_link.click()
+        # проинициализируем новый объект Page и вернем его
+        # return LoginPage(browser=self.browser, url=self.browser.current_url)
 
     def should_be_login_link(self):
         assert self.is_element_present(
