@@ -13,20 +13,30 @@ def pytest_addoption(parser):  # обработчик опции
                      action='store',
                      default="en",
                      help="Choose language: '--language=en' or '--language=ru'")
+    parser.addoption('--headless',
+                     action='store',
+                     default="false",  # default значение
+                     help="Run in headless mode: 'true' or 'false'")
 
 
 @pytest.fixture(scope="function")  # обрабатывает переданные в опции данные
 def browser(request):
     browser_name = request.config.getoption(
         "browser_name")  # логика обработки командной строки
+    headless = request.config.getoption('headless').lower() == 'true'
     user_language = request.config.getoption("language")
 
     options = Options()
     options.add_experimental_option(
         'prefs', {'intl.accept_languages': user_language})
+    if headless:
+        # добавляем только если headless=true
+        options.add_argument('--headless')
 
     options_firefox = OptionsFirefox()
     options_firefox.set_preference("intl.accept_languages", user_language)
+    if headless:
+        options_firefox.add_argument('--headless')
 
     browser = None
     if browser_name == "chrome":
