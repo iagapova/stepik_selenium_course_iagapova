@@ -9,8 +9,6 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        print('-----', self.url)
-        print('-----', self.browser.current_url)
         assert LoginPageLocators.LOGIN_URL in self.browser.current_url, f"Login URL is not correct: {self.browser.current_url}"
         # assert "login" in browser.current_url
 
