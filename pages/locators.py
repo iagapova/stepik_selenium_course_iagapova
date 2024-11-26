@@ -3,12 +3,9 @@ from selenium.webdriver.common.by import By
 # locators.py - тут мы храним локаторы, в виде констант. Локаторы каждой отдельной страницы завёрнуты в класс, чтобы было удобно импортировать
 
 
-class MainPageLocators():
-    # LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
+class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
-
-class LoginPageLocators():
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     LOGIN_URL = "https://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
@@ -19,7 +16,7 @@ class ProductPageLocators():
         By.CSS_SELECTOR, ".btn-add-to-basket")
     BASKET_PRICE = (
         By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-info  fade in"] strong')
-    ALERT_ABOUT_ADDED_BOOK = (
+    SUCCESS_ALERT_ADDED_BOOK = (
         By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-success  fade in"] div')
     ALERT_BOOK_NAME = (
         By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-success  fade in"] div strong')
