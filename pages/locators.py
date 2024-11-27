@@ -9,18 +9,18 @@ class BasePageLocators():
     LOGIN_URL = "https://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
-    BASKET_LINK = (By.CSS_SELECTOR, '[class = "btn-group"]')
+    BASKET_LINK = (By.CSS_SELECTOR, ".btn-group")
 
 
 class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (
         By.CSS_SELECTOR, ".btn-add-to-basket")
     BASKET_PRICE = (
-        By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-info  fade in"] strong')
+        By.CSS_SELECTOR, '.alert-info strong')
     SUCCESS_ALERT_ADDED_BOOK = (
-        By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-success  fade in"] div')
+        By.CSS_SELECTOR, '.alert.alert-success div')
     ALERT_BOOK_NAME = (
-        By.CSS_SELECTOR, '[class="alert alert-safe alert-noicon alert-success  fade in"] div strong')
+        By.CSS_SELECTOR, '.alert.alert-success strong')
     BOOK_NAME = (
         By.CSS_SELECTOR, '.product_main h1')
     BOOK_PRICE = (
@@ -29,6 +29,6 @@ class ProductPageLocators():
 
 class BasketPageLocators():
     BASKET_INFO_MESSAGE = (
-        By.CSS_SELECTOR, '[class="content"] p')
+        By.CSS_SELECTOR, ".content p")
     BASKET_ITEMS = (
-        By.CLASS_NAME, "basket-items")
+        By.CSS_SELECTOR, ".basket-items")
