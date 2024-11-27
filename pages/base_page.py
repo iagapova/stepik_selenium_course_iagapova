@@ -28,6 +28,10 @@ class BasePage:
         # alert = self.browser.switch_to.alert
         # alert.accept()
 
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        link.click()
+
     # проверяем, что какой-то элемент исчезает
 
     def is_disappeared(self, how, what, timeout=4):

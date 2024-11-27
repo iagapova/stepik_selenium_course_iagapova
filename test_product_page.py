@@ -4,6 +4,7 @@ from .pages.locators import BasePageLocators
 # from selenium.webdriver.common.by import By
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
+from .pages.basket_page import BasketPage
 import time
 
 # links = ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
@@ -111,17 +112,29 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = LoginPage(browser, link)
     page.open()
     page.go_to_login_page()
-    # реализация первого метода когда инициализация страницы находится в классе BasePage
-    # login_page = page.go_to_login_page()
     # реализация второго метода когда инициализация страницы находитя в тесте
-    login_page = LoginPage(browser=browser, url=browser.current_url)
-    login_page.should_be_login_page()
+    # login_page = LoginPage(browser=browser, url=browser.current_url)
+    # login_page.should_be_login_page()
+    page.should_be_login_page()
+
+
+@pytest.mark.new
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = BasketPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    page.should_be_info_basket_content()
+    page.should_be_empty_basket()
+    page.should_not_be_success_message()
 
 
 if __name__ == "__main__":
     print("НАЧАЛО")
     pytest.main()
 
+# @pytest.mark.new
 # pytest -v -s --tb=line --language=en test_product_page.py
+# pytest -v -s -m "new" --tb=line --language=en test_product_page.py
 # pytest --headless=true -v -s --tb=line --language=en test_product_page.py
 # pytest --headless=true -v -rx --tb=short --language=en test_product_page.py

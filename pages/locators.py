@@ -9,6 +9,7 @@ class BasePageLocators():
     LOGIN_URL = "https://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    BASKET_LINK = (By.CSS_SELECTOR, '[class = "btn-group"]')
 
 
 class ProductPageLocators():
@@ -24,3 +25,8 @@ class ProductPageLocators():
         By.CSS_SELECTOR, '.product_main h1')
     BOOK_PRICE = (
         By.CSS_SELECTOR, 'p.price_color')
+
+
+class BasketPageLocators():
+    BASKET_INFO_MESSAGE = (
+        By.CSS_SELECTOR, '[class="content"] p')
