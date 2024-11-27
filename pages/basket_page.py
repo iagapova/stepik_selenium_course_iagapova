@@ -20,12 +20,13 @@ class BasketPage(BasePage):
         assert self.is_element_present(
             *BasketPageLocators.BASKET_INFO_MESSAGE), "Notification with basket info is not present"
 
-    def should_be_empty_basket(self):
+    def is_basket_empty(self):
+        expected_empty_basket_message = "Your basket is empty. Continue shopping"
         basket_content_info = self.browser.find_element(
-            *BasketPageLocators.BASKET_INFO_MESSAGE).text.split(". ")[0].strip()
-        assert basket_content_info == "Your basket is empty", f'Basket info message is "{basket_content_info}", but should be "Your basket is empty".'
+            *BasketPageLocators.BASKET_INFO_MESSAGE).text
+        assert basket_content_info == expected_empty_basket_message, f'Basket info message is "{basket_content_info}", but should be "{expected_empty_basket_message}".'
 
-    def should_not_be_success_message(self):
+    def should_not_be_basket_items(self):
         # упадет, как только увидит искомый элемент. Не появился: успех, тест зеленый
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_ALERT_ADDED_BOOK), \
+        assert self.is_not_element_present(*BasketPageLocators.BASKET_ITEMS), \
             "Success message is presented, but should not be"
