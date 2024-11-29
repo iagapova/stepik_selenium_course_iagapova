@@ -13,7 +13,7 @@ def pytest_addoption(parser):  # обработчик опции
                      action='store',
                      default="en",
                      help="Choose language: '--language=en' or '--language=ru'")
-    parser.addoption('--headless',
+    parser.addoption('--headless',  # параметр для запуска тестов в фоновом режиме
                      action='store',
                      default="false",  # default значение
                      help="Run in headless mode: 'true' or 'false'")

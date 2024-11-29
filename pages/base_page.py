@@ -4,11 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from .locators import BasePageLocators
-
-
 import math
 import time
-
 
 # base_page.py - тут мы храним методы которые применяются по всему проекту вообще, всё завернуто в класс, чтобы было удобно импортировать.
 
@@ -22,18 +19,12 @@ class BasePage:
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
-        # проинициализируем новый объект Page и вернем его
-        # return LoginPage(browser=self.browser, url=self.browser.current_url)
-        # обработка alert
-        # alert = self.browser.switch_to.alert
-        # alert.accept()
 
     def go_to_basket_page(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         link.click()
 
     # проверяем, что какой-то элемент исчезает
-
     def is_disappeared(self, how, what, timeout=4):
         # будет ждать до тех пор, пока элемент не исчезнет
         try:

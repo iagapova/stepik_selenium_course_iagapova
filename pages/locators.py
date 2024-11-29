@@ -33,7 +33,7 @@ class ProductPageLocators():
 
 
 class BasketPageLocators():
-    BASKET_INFO_MESSAGE = (
+    BASKET_CONTENT_MESSAGE = (
         By.CSS_SELECTOR, ".content p")
     BASKET_ITEMS = (
         By.CSS_SELECTOR, ".basket-items")
