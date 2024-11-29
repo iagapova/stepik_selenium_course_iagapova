@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as OptionsFirefox
 
+#  conftest.py - тут находится фикстура инициализации браузера, его запуск и закрытие, а также передача параметров  командной строке
+
 
 def pytest_addoption(parser):  # обработчик опции
     parser.addoption('--browser_name',

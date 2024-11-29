@@ -4,7 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-import time
+
+# product_page.py - тут мы храним проверки связанные с товаром завернутые в класс ProductPage, который наследуется от класса BasePage
 
 
 class ProductPage(BasePage):

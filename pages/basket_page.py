@@ -1,6 +1,8 @@
 from .base_page import BasePage
 from .locators import BasketPageLocators
 
+# basket_page.py - тут мы храним проверки сообщений на странице корзины, завернутые в класс BasketPage, который наследуется от класса BasePage
+
 
 class BasketPage(BasePage):
     def should_be_info_basket_content(self):

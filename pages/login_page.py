@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import BasePageLocators
-import time
+
+# login_page.py - тут мы храним проверки авторизации и регистрации
 
 
 class LoginPage(BasePage):

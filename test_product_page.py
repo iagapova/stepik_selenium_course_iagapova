@@ -6,8 +6,11 @@ from .pages.basket_page import BasketPage
 from .pages.base_page import BasePage
 import time
 
+# test_product_page.py - тут мы выполняем тестирование товара
 
 # @pytest.mark.new
+
+
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
